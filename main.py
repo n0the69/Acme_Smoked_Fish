@@ -7,14 +7,18 @@ create_default_users()
 
 while True:
 
-    print("\n=== ACME SMOKED FISH ===")
-    print("1 Login")
-    print("2 Salir del sistema")
+    print("\n========================")
+    print("=== ACME SMOKED FISH ===")
+    print("===    By NothinG    ===")
+    print("========================")
+    
+    print("1 Login Administrador o Vendedor")
+    print("2 Salir de Smoked Fish")
 
-    opcion = input("Seleccione: ")
+    opcion = input("Seleccione 1 o 2 : ")
 
     if opcion == "2":
-        print("Cerrando aplicación...")
+        print("Cerrando la Matrix............Goodbye!")
         sys.exit()
 
     role = login()
@@ -24,3 +28,4 @@ while True:
 
     elif role == "seller":
         seller_menu()
+        
