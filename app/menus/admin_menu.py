@@ -4,11 +4,11 @@ from app.services.report_service import profit_report, best_seller
 def admin_menu():
 
     while True:
-        print("\n1 Actualizar")
-        print("2 Historial")
-        print("3 Ganancia")
-        print("4 Mas vendido")
-        print("5 Salir")
+        print("\n1 Actualizar salmones")
+        print("2 Historial de ventas")
+        print("3 Ganancia por salmon")
+        print("4 Mas vendido en ultimas ventas")
+        print("5 Salir del menu")
 
         op = input()
 
