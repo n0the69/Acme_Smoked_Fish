@@ -1,24 +1,33 @@
 #from pymongo import MongoClient
 
 # conexion local
-#cliente = MongoClient('mongodb://localhost:27017/')
+#cliente = MongoClient("mongodb://localhost:27017/")
 
 # crear o usar base de datos
-#db = cliente['py_mongodb']  
+#db = cliente["acme_smoked_fish"]  
 
 # crear coleccion
-#coleccion = db['Acme_Smoked_fish']
+#coleccion = db["Acme_Smoked_fish"]
 
 #print ("Base de datos y colección creadas exitosamente.")
 
-import pymongo
+# ----------------------------------------------------------------------------------------------------------
 
-class ConexionDB:
+from pymongo import MongoClient
 
-    def __init__(self):
-        self.client = pymongo.MongoClient("mongodb://localhost:27017/")
-        self.db = self.client["py_mongodb"]
-        self.coleccion = self.db["Acme_Smoked_fish"]
-        
-    def obtener_db(self):
-        return self.db
+try:
+    cliente = MongoClient("mongodb://localhost:27017/")
+    db = cliente["acme_smoked_fish"]
+    
+    coleccion = db["Acme_Smoked_fish"]
+    
+    dato = {
+        "nombre":"Luis","cargo":"Admin"}
+    
+    coleccion.insert_one(dato)
+    
+    print("Dato insertado exitosamente en MongoDB")
+    print(" Conexion exitosa a MongoDB")
+
+except Exception as e:
+    print("Error conexion:", e)
