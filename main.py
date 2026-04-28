@@ -12,12 +12,13 @@ while True:
     print("===    By NothinG    ===")
     print("========================")
     
-    print("1 Login Administrador o Vendedor")
-    print("2 Salir de Smoked Fish")
+    print("1 Login Administrador")
+    print("2 Login Vendedor")
+    print("3 Salir de Smoked Fish")
 
-    opcion = input("Seleccione 1 o 2 : ")
+    opcion = input("Seleccione 1, 2 o 3 : ")
 
-    if opcion == "2":
+    if opcion == "3":
         print("Cerrando la Matrix............Goodbye!")
         sys.exit()
 
