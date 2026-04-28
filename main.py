@@ -1,62 +1,70 @@
-from conexion import ConexionDB
-from models.usuarios import Usuario
-from models.salmon import Salmon
-from models.venta import Venta
-from services.reportes import Reportes
+from conexion import Conexion
 
-db = ConexionDB().obtener_db()
+db = Conexion().obtener_db()
 
-salmon = Salmon(db)
-salmon.inicializar()
+print("Conexion OK")
 
-venta = Venta(db)
-reportes = Reportes(db)
+#from conexion import ConexionDB
+#from models.usuarios import Usuario
+#from models.salmon import Salmon
+#from models.venta import Venta
+#from services.reportes import Reportes
 
-while True:
+#db = ConexionDB().obtener_db()
 
-    rol = Usuario.login()
+#salmon = Salmon(db)
+#salmon.inicializar()
 
-    if rol == "vendedor":
+#venta = Venta(db)
+#reportes = Reportes(db)
 
-        while True:
-            print("\n1. Realizar Venta")
-            print("2. Salir")
+#while True:
 
-            op = input("Opcion: ")
+#    rol = Usuario.login()
 
-            if op == "1":
-                venta.realizar_venta()
-            else:
-                break
+#    if rol == "vendedor":
 
-    elif rol == "admin":
+#        while True:
+#            print("\n1. Realizar Venta")
+#            print("2. Salir")
 
-        while True:
+#            op = input("Opcion: ")
 
-            print("\nADMIN")
-            print("1. Actualizar Stock")
-            print("2. Cambiar Precios")
-            print("3. Historial Ventas")
-            print("4. Reporte Ganancia")
-            print("5. Salmon Mas Vendido")
-            print("6. Salir")
+#            if op == "1":
+#                venta.realizar_venta()
+#            else:
+#                break
 
-            op = input("Opcion: ")
+#    elif rol == "admin":
 
-            if op == "1":
-                salmon.actualizar_stock()
+#        while True:
 
-            elif op == "2":
-                salmon.cambiar_precio()
+#            print("\nADMIN")
+#            print("1. Actualizar Stock")
+#            print("2. Cambiar Precios")
+#            print("3. Historial Ventas")
+#            print("4. Reporte Ganancia")
+#            print("5. Salmon Mas Vendido")
+#            print("6. Salir")
 
-            elif op == "3":
-                venta.historial()
+#            op = input("Opcion: ")
 
-            elif op == "4":
-                reportes.coste_ganancia()
+#            if op == "1":
+#                salmon.actualizar_stock()
 
-            elif op == "5":
-                reportes.mas_vendido()
+#            elif op == "2":
+#                salmon.cambiar_precio()
 
-            else:
-                break
+#            elif op == "3":
+#                venta.historial()
+
+#            elif op == "4":
+#                reportes.coste_ganancia()
+
+#            elif op == "5":
+#                reportes.mas_vendido()
+#
+#            else:
+#                break
+
+
