@@ -1,70 +1,26 @@
-from conexion import Conexion
+from app.services.auth_service import login, create_default_users
+from app.menus.admin_menu import admin_menu
+from app.menus.seller_menu import seller_menu
+import sys
 
-db = Conexion().obtener_db()
+create_default_users()
 
-print("Conexion OK")
+while True:
 
-#from conexion import ConexionDB
-#from models.usuarios import Usuario
-#from models.salmon import Salmon
-#from models.venta import Venta
-#from services.reportes import Reportes
+    print("\n=== ACME SMOKED FISH ===")
+    print("1 Login")
+    print("2 Salir del sistema")
 
-#db = ConexionDB().obtener_db()
+    opcion = input("Seleccione: ")
 
-#salmon = Salmon(db)
-#salmon.inicializar()
+    if opcion == "2":
+        print("Cerrando aplicación...")
+        sys.exit()
 
-#venta = Venta(db)
-#reportes = Reportes(db)
+    role = login()
 
-#while True:
+    if role == "admin":
+        admin_menu()
 
-#    rol = Usuario.login()
-
-#    if rol == "vendedor":
-
-#        while True:
-#            print("\n1. Realizar Venta")
-#            print("2. Salir")
-
-#            op = input("Opcion: ")
-
-#            if op == "1":
-#                venta.realizar_venta()
-#            else:
-#                break
-
-#    elif rol == "admin":
-
-#        while True:
-
-#            print("\nADMIN")
-#            print("1. Actualizar Stock")
-#            print("2. Cambiar Precios")
-#            print("3. Historial Ventas")
-#            print("4. Reporte Ganancia")
-#            print("5. Salmon Mas Vendido")
-#            print("6. Salir")
-
-#            op = input("Opcion: ")
-
-#            if op == "1":
-#                salmon.actualizar_stock()
-
-#            elif op == "2":
-#                salmon.cambiar_precio()
-
-#            elif op == "3":
-#                venta.historial()
-
-#            elif op == "4":
-#                reportes.coste_ganancia()
-
-#            elif op == "5":
-#                reportes.mas_vendido()
-#
-#            else:
-#                break
-
-
+    elif role == "seller":
+        seller_menu()
