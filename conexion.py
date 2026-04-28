@@ -13,21 +13,31 @@
 
 # ----------------------------------------------------------------------------------------------------------
 
+#from pymongo import MongoClient
+
+
+#cliente = MongoClient("mongodb://localhost:27017/")
+#db = cliente["acme_smoked_fish"]
+    
+#coleccion = db["Acme_Smoked_fish"]
+    
+#dato = {
+#        "nombre":"Luis","cargo":"Admin"}
+    
+#coleccion.insert_one(dato)
+    
+#print("Dato insertado exitosamente en MongoDB")
+#print(" Conexion exitosa a MongoDB")
+
+# ----------------------------------------------------------------------------------------------------------
+
 from pymongo import MongoClient
 
-try:
-    cliente = MongoClient("mongodb://localhost:27017/")
-    db = cliente["acme_smoked_fish"]
-    
-    coleccion = db["Acme_Smoked_fish"]
-    
-    dato = {
-        "nombre":"Luis","cargo":"Admin"}
-    
-    coleccion.insert_one(dato)
-    
-    print("Dato insertado exitosamente en MongoDB")
-    print(" Conexion exitosa a MongoDB")
+class Conexion:
 
-except Exception as e:
-    print("Error conexion:", e)
+    def __init__(self):
+        self.client = MongoClient("mongodb://localhost:27017/")
+        self.db = self.client["acme_smoked_fish"]
+
+    def obtener_db(self):
+        return self.db

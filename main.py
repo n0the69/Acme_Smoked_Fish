@@ -1,8 +1,8 @@
 from conexion import ConexionDB
-from usuarios import Usuario
-from salmon import Salmon
-from ventas import Venta
-from reportes import Reportes
+from models.usuarios import Usuario
+from models.salmon import Salmon
+from models.venta import Venta
+from services.reportes import Reportes
 
 db = ConexionDB().obtener_db()
 
