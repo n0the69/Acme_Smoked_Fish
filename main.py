@@ -19,7 +19,7 @@ while True:
     opcion = input("Seleccione 1, 2 o 3 : ")
 
     if opcion == "3":
-        print("Cerrando la Matrix............Goodbye!")
+        print("Cerrando la Matrix............Goodbye!....my friend")
         sys.exit()
 
     role = login()
