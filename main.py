@@ -7,26 +7,31 @@ create_default_users()
 
 while True:
 
-    print("\n========================")
-    print("=== ACME SMOKED FISH ===")
-    print("===    By NothinG    ===")
-    print("========================")
+
+ print("\n==================================================")
+ print("        ACME SMOKED FISH MANAGEMENT SYSTEM          ")
+ print("--------------------------------------------------  ")
+ print(" Sistema Corporativo de Gestión Comercial           ")
+ print(" Version 1.0 Enterprise                             ")
+ print("==================================================  ")
     
-    print("1 Login Administrador")
-    print("2 Login Vendedor")
-    print("3 Salir de Smoked Fish")
 
-    opcion = input("Seleccione 1, 2 o 3 : ")
+ print("1 Login Administrador")
+ print("2 Login Vendedor")
+ print("3 Salir de Smoked Fish")
 
-    if opcion == "3":
+ opcion = input("Seleccione 1, 2 o 3 : ")
+
+
+ if opcion == "3":
         print("Cerrando la Matrix............Goodbye!....my Frieeend..!")
         sys.exit()
 
-    role = login()
+ role = login()
 
-    if role == "admin":
+ if role == "admin":
         admin_menu()
 
-    elif role == "seller":
+ elif role == "seller":
         seller_menu()
         
